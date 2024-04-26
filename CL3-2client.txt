@@ -1,0 +1,14 @@
+import xmlrpc.client 
+
+def main():
+    server = xmlrpc.client.ServerProxy('http://localhost:8000')
+    
+    n1 = int(input('Enter first number: '))
+    n2 = int(input('Enter second number: '))
+    opp = int(input('Enter operation to perform: '))
+    
+    result = server.calculate(n1, n2, opp)
+    print(result)
+    
+if __name__ == '__main__':
+    main()

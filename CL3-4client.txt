@@ -1,0 +1,15 @@
+import Pyro4
+
+def main():
+    uri = input('Enter uri')
+    checker = Pyro4.Proxy(uri)
+    text = input('Enter text for checking')
+    is_palindrome = checker.is_palindrome(text)
+    
+    if is_palindrome:
+        print("text is palindrome")
+    else:
+        print('text is not palindrome')
+
+if __name__ == "__main__":
+    main()
